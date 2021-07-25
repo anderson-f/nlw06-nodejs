@@ -2,7 +2,7 @@ import {Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn} from 
 
 import { v4 as uuid } from "uuid"
 
-@Entity()
+@Entity("users")
 class User {
 
   @PrimaryColumn()
@@ -13,6 +13,9 @@ class User {
 
   @Column()
   email: string;
+
+  @Column()
+  admin: boolean;
 
   @CreateDateColumn()
   created_at: Date;
@@ -28,4 +31,4 @@ class User {
   }
 }
 
-export {User }
+export { User }
